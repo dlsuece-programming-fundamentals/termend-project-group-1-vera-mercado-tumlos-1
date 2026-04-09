@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grains and Greens Catering</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="catering-quote.css">
+
+</head>
+<body>
+
+<!-- Headers leading to others part of the project-->
+<header>
+  <div class="logo">Grains <span>and</span> Greens Catering</div>
+  <nav>
+    <a href="catering-home.html">Home</a>
+    <a href="#" class="active">Get a Quote</a>
+  </nav>
+</header>
+
+<div class="hero-band">
+  <img ref src="catering-logo.png" alt="Catering Quote Hero Image" style="height: 150px; width: auto;">
+  <h1>Request a Quote</h1>
+  <p>Fill in your event details and a Custom Quotation will be prepared for you.</p>
+</div>
+
+<div class="progress-bar">
+  <div class="step active" id="event_progress"><div class="step-dot">1</div> Event Details</div>
+  <div class="step active" id="package_progress"><div class="step-dot">2</div> Package &amp; Extras</div>
+  <div class="step active" id="dietary_progress"><div class="step-dot">3</div> Dietary Info</div>
+  <div class="step" id="review_progress"><div class="step-dot">4</div> Review Quote</div>
+</div>
+
+<!-- Main page layout including Sidebar -->
+<div class="page-layout">
+  <!-- MAIN FORM COLUMN -->
+  <div class="main-col">
+
+    <!-- 1. EVENT INFORMATION -->
+
+    <!-- Event Header-->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+        </div>
+        <div>
+          <h2>Event Information</h2>
+          <p>Tell us about your event so we can tailor the perfect package</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+
+          <!-- Event Name -->
+          <div class="field span-2">
+            <label>Event Name / Occasion <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. Dela Cruz Wedding Reception" id="eventName">
+          </div>
+
+          <!-- Event Type -->          
+          <div class="field">
+            <label>Event Type <span class="req">*</span></label>
+            <select id="eventType">
+              <option value="">Select type</option>
+              <option>Wedding Reception</option>
+              <option>Birthday Celebration</option>
+              <option>Corporate Lunch / Dinner</option>
+              <option>Debut / 18th Birthday</option>
+              <option>Baptism / Christening</option>
+              <option>Anniversary</option>
+              <option>Graduation Party</option>
+            </select>
+          </div>
+
+          <!-- Event Date -->
+          <div class="field">
+            <label>Event Date <span class="req">*</span></label>
+            <input type="date" id="eventDate">
+          </div>
+
+          <!-- Number of Guests -->
+          <div class="field">
+            <label>Number of Guests <span class="req">*</span></label>
+            <input type="number" min="10" max="2000" placeholder="e.g. 150" id="guestCount" oninput="updateSummary()">
+          </div>
+
+          <!-- Service Start Time -->
+          <div class="field">
+            <label>Service Start Time <span class="req">*</span></label>
+            <input type="time" id="startTime">
+          </div>
+
+          <!-- City / Municipality -->
+          <div class="field">
+            <label>City / Municipality</label>
+            <input type="text" placeholder="e.g. Taytay, Rizal" id="city">
+          </div>
+
+          <!-- Service End Time -->
+          <div class="field">
+            <label>Service End Time</label>
+            <input type="time" id="endTime">
+          </div>
+
+          <!-- Address -->
+          <div class="field span-2">
+            <label>Venue / Address <span class="req">*</span></label>
+            <input type="text" placeholder="Full venue name and address" id="venue">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CONTACT INFORMATION -->
+    <div class="card">
+
+      <!-- Contact Info Header -->
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+        <div>
+          <h2>Contact Information</h2>
+          <p>We'll send your quotation to these details</p>
+        </div>
+      </div>
+
+      
+      <div class="card-body">
+        <div class="form-grid">
+          <!-- Full Name-->
+          <div class="field span-2">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" placeholder="Juan Dela Cruz" id="fullName">
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" placeholder="juan@email.com" id="email">
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="field">
+            <label>Mobile Number <span class="req">*</span></label>
+            <input type="tel" placeholder="09XX XXX XXXX" id="phone">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PACKAGE + EXTRAS  -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-1.25-.44-2.31-1.3-3.17-.86-.86-2.53-1.63-4.36-1.89-.86-.12-1.78-.19-2.37-.19s-1.51.07-2.37.19c-1.83.26-3.5 1.03-4.36 1.89C1.44 12.68 1 13.74 1 14.99h15.03z"/></svg>
+        </div>
+        <div>
+          <h2>Package Selection &amp; Extras</h2>
+          <p>Choose a food package, then add optional extras</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="field">
+          <label>Food Package <span class="req">*</span></label>
+          <select id="packageSelect" onchange="updatePackage()">
+            <option value="">— Select a package —</option>
+            <option value="classic">Classic Filipino Feast (₱650/pax)</option>
+            <option value="fiesta">Fiesta Grande (₱950/pax)</option>
+            <option value="corporate">Corporate Set Menu (₱750/pax)</option>
+            <option value="premium">Premium Celebration (₱1,400/pax)</option>
+          </select>
+        </div>
+
+        <!-- Package info display -->
+        <div class="package-display" id="packageDisplay">
+          <div class="pkg-banner">
+            <span class="pkg-name" id="pkgName"></span>
+            <span class="pkg-price" id="pkgPrice"></span>
+          </div>
+          <div class="pkg-details">
+            <div id="pkgMainContent"></div>
+          </div>
+        </div>
+
+        <hr class="extras-divider">
+
+        <div class="extras-title">Optional Add-Ons &amp; Extras</div>
+        <div class="checkbox-grid" id="extrasGrid">
+          <!-- populated by JS -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. SPECIAL REQUESTS / DIETARY INFO -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        </div>
+        <div>
+          <h2>Special Requests &amp; Dietary Information</h2>
+          <p>Allergies, restrictions, or anything else we should know</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+          <div class="field span-2">
+            <label>Dietary Restrictions / Allergies</label>
+            <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">Select all that apply for your guests</p>
+            <div class="tag-grid" id="dietTags">
+              <span class="diet-tag" onclick="toggleTag(this)">Vegetarian</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Vegan</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Halal</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Kosher</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Gluten-Free</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Nut Allergy</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Seafood Allergy</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Lactose Intolerant</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Diabetic-Friendly</span>
+              <span class="diet-tag" onclick="toggleTag(this)">Low Sodium</span>
+            </div>
+          </div>
+          <div class="field">
+            <label>Approximate No. of Guests with Restrictions</label>
+            <input type="number" min="0" placeholder="e.g. 12" id="restrictedCount">
+          </div>
+          <div class="field">
+            <label>Specific Allergy Details</label>
+            <input type="text" placeholder="e.g. severe peanut allergy" id="allergyDetails">
+          </div>
+          <div class="field span-2">
+            <label>Special Requests</label>
+            <textarea placeholder="e.g. Please prepare a separate kid-friendly menu, set up station near the entrance, custom cake cutting service, specific dish requests..." id="specialRequests"></textarea>
+            <span class="field-hint">Any other notes, preferences, or requests for our team</span>
+          </div>
+          <div class="field span-2">
+            <label>Theme / Setup Instructions</label>
+            <textarea placeholder="e.g. Garden theme with wooden rustic elements, candles, gold accent pieces..." id="themeNotes" style="min-height: 70px;"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-col -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="card" style="position: sticky; top: 1rem;">
+      <div class="summary-header">
+        <svg style="width:16px;height:16px;fill:#FAF7F2;flex-shrink:0" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        <h3>Quote Summary</h3>
+      </div>
+      <div class="summary-body">
+        <div class="summary-row">
+          <span class="sr-label">Event</span>
+          <span class="sr-val" id="sum-event" style="text-align:right;max-width:160px">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="sr-label">Date</span>
+          <span class="sr-val" id="sum-date">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="sr-label">Guests</span>
+          <span class="sr-val" id="sum-guests">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="sr-label">Package</span>
+          <span class="sr-val" id="sum-package">—</span>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="summary-row">
+          <span class="sr-label">Package subtotal</span>
+          <span class="sr-val" id="sum-pkg-sub">₱ —</span>
+        </div>
+        <div class="summary-row">
+          <span class="sr-label">Extras</span>
+          <span class="sr-val" id="sum-extras">₱ —</span>
+        </div>
+        <div class="summary-row">
+          <span class="sr-label">VAT (12%)</span>
+          <span class="sr-val" id="sum-vat">₱ —</span>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="total-row">
+          <span class="tr-label">Estimated Total</span>
+          <span class="tr-val" id="sum-total">₱ —</span>
+        </div>
+        <p class="vat-note">VAT-inclusive estimate. Final pricing subject to negotiation.</p>
+
+        <button class="quote-btn" onclick="showQuote()" id="generateBtn">Generate Quote →</button>
+        <button class="quote-btn-secondary" onclick="clearForm()">Clear Form</button>
+        <p class="info-note">No payment required. We'll contact you within 24 hours to confirm details.</p>
+
+        <div class="compliance-row">
+          <span class="compliance-badge">BIR Registered</span>
+          <span class="compliance-badge">DTI Licensed</span>
+        </div>
+      </div>
+    </div>
+  </div><!-- /sidebar -->
+
+</div><!-- /page-layout -->
+
+<!-- QUOTE MODAL -->
+<div class="modal-backdrop" id="quoteModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h2>Your Quotation</h2>
+        <p>Reference No: <span class="ref-number" id="refNumber"></span></p>
+      </div>
+      <button class="modal-close" onclick="closeQuote()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+    </div>
+    <div class="modal-footer">
+      <button class="modal-btn btn-primary" onclick="submitRequestToTelegram()">Submit Request →</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="catering-quote.js"></script>
+</body>
+</html>

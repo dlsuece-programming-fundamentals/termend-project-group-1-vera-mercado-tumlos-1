@@ -160,15 +160,11 @@ https://drive.google.com/file/d/1-pIDbi0koSsEYz3q62G5rUhP_WN4HuD-/view?usp=drive
 ├── src/
 │   ├── catering-quote.html
 │   ├── catering-home.html
-│   ├── css/
-│   │   └── catering-quote.css
-│   │   └── catering-home.css
-│   ├── js/
-│   │   └── catering_quote.js
-│   │   └── catering-home.css
-│   ├── assets/
-│   │   └── catering-cover.png
-│   │   └── catering-logo.png
+│   ├── catering-quote.css
+│   ├── catering-home.css
+│   ├── catering_quote.js
+│   ├── catering-cover.png
+│   ├── catering-logo.png
 ├── docs/
 └── README.md
 ```

@@ -135,7 +135,7 @@ The website was successfully developed in accordance with the client’s specifi
 
 Check off each item as you complete it:
 
-- [ ] **Project Documentation** — this README or uploaded document following the format above
+- [x] **Project Documentation** — this README or uploaded document following the format above
 - [x] **App Design** — Figma link submitted on Canvas
 - [x] **Source Code** — all HTML, CSS, JS, and assets in `src/`
 - [x] **Video Walkthrough** — max 5 minutes, link below
@@ -148,12 +148,10 @@ https://drive.google.com/file/d/1-pIDbi0koSsEYz3q62G5rUhP_WN4HuD-/view?usp=drive
 
 ## How to Run
 
-Provide step-by-step instructions so that anyone who downloads this repository can run your website:
-
 ```
 # Example:
-# 1. Open catering-home in a browser
-# 2. Or run a local server: python -m http.server 8000
+# 1. Open catering-home.html in a browser
+# 2. Or utilize VS Code and use the live server extension to open the html file
 ```
 
 ## Project Structure
@@ -171,9 +169,7 @@ Provide step-by-step instructions so that anyone who downloads this repository c
 │   ├── assets/
 │   │   └── catering-cover.png
 │   │   └── catering-logo.png
-│   └── ...
 ├── docs/
-│   └── (documentation files, if separate from README)
 └── README.md
 ```
 

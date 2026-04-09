@@ -2,6 +2,9 @@
 # LBYCPG3 Term End Project — (Write Your Project Title Here)
 
 **Group Members:** (Edit this line to add your full names)
+- Mercado, Charles Rodley
+- Tumlos, Edouard Allan Paul
+- Vera, Sarea Ohanna
 
 ## Abstract
 
